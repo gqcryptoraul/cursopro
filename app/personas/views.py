@@ -82,7 +82,7 @@ class PersonasDetailView(DetailView):
     success_url = reverse_lazy('personas_app:all-personas')
     def get_context_data(self, **kwargs):
         context = super(PersonasDetailView, self).get_context_data(**kwargs)
-        context['titulo'] = 'Detalle de la persona'
+        context['titulo'] = 'Detalle de Personas'
         return context
 
 
@@ -108,7 +108,7 @@ class PersonasCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(PersonasCreateView, self).get_context_data(**kwargs)
-        context['titulo'] = 'Crear persona'
+        context['titulo'] = 'Crear Personas'
         return context
 
 
