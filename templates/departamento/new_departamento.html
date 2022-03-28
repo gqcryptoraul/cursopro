@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %} Sistema Empleado | Inicio {% endblock title %}
+{% block content %}
+{% include 'includes/header.html' %}
+
+<h1>Registar Departamento</h1>
+<form method="post">{% csrf_token %}
+
+    <h3>Datos del Empleado</h3>
+    <p>{{ form.nombre }}</p>
+    <P>{{ form.apellidos }}</P>
+
+    <h3>Datos del Departamento</h3>
+    <p>{{ form.departamento }}</p>
+    <P>{{ form.shorname }}</P>
+
+
+    <input type="submit" value="Save">
+</form>
+{% endblock content %}

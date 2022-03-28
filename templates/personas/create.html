@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %} Sistema Empleado | Incluir {% endblock title %}
+{% block content %}
+{% include 'includes/header.html' %}
+
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell"> {{ titulo }} </h1>
+    </div>
+    <div class="grid-x">
+        
+        <form class="cell grid-x grid-margin-x" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <div class="medium-6 cell">
+                <label>Nombre:
+                    {{ form.name }}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Apellido:
+                    {{ form.last_name }}
+                  
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Direccion:
+                    {{ form.direccion }}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Correo Electronico:
+                   {{ form.correo}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Departamento:
+                    {{ form.departamento}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Cargo:
+                    {{ form.job}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Habilidades:
+                   {{ form.habilidades}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Resumen Curricular:
+                   {{ form.cv}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Fecha de Ingreso:
+                   {{ form.fec_nac}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Salario:
+                   {{ form.salario}}
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Foto de Perfil:
+                   {{ form.avatar}}
+                </label>
+            </div>
+
+            
+            
+            <div class="medium-6 cell">
+                <input type="submit" class="button success" value="Crear">
+            </div>
+           
+        </form>
+    </div>
+    {% endblock content%}
+
+
+

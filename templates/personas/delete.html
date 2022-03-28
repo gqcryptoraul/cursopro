@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %} Sistema Empleado | Delete {% endblock title %}
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell"> {{ titulo }}   {{ object.full_name }} </h1>
+    </div>
+    <div class="grid-x">
+    <form class="cell grid-x grid-margin-x"method="post" enctype="multipart/form-data">{% csrf_token %}
+   
+        
+        <div class="large-10 cell">
+            <div class="callout secondary">
+                <h5>Desea Eliminar este empleado ?</h5>
+                <p>Recuerde que es una operacion irreversible.</p>
+                <input class="alert button" type="submit" value="Delete">
+              </div>
+        </div>
+    
+     
+
+</form>
+</div>
+</div>
+
+{% endblock content%}

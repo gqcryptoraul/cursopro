@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %} Sistema Empleado | Detalle Empleados {% endblock title %}
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-x"">
+      <h1 class=" cell">{{ object.full_name }}</h1>
+      <form class="cell grid-x grid-margin-x">
+        <div class="medium-12 cell"> 
+        <div class="card" style="width: 150px;">
+        
+            {% if persona.avatar %}
+               <img src="{{ persona.avatar.url }}"> 
+            {% else %}
+                <img src="{% static 'img/noavatar.jpg' %}"> 
+            {% endif %}
+      
+        </div>
+        </div>
+        <div class="medium-6 cell">
+            <label>Nombre:
+               <input type="text" placeholder=".medium-6.cell" value= "{{ persona.name }}"> 
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Apellido:
+                <input type="text" placeholder=".medium-6.cell" value= "{{ persona.last_name }}"> 
+              
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Direccion:
+              <input type="text" placeholder=".medium-6.cell" value= "{{ persona.direccion }}"> 
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Correo Electronico:
+               <input type="text" placeholder=".medium-6.cell" value= "{{ persona.correo }}"> 
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Departamento:
+                <input type="text" placeholder=".medium-6.cell" value= "{{ persona.departamento.shor_name }}"> 
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Cargo:
+                <input type="text" placeholder=".medium-6.cell" value= "{{ persona.get_job_display }}"> 
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Habilidades:</label>
+             <ul class="vertical menu">
+                {% for h in persona.habilidades.all %}
+                    <li>{{ h.habilidad }}</li>
+                {% endfor %}
+              
+             </ul>
+        </div>
+        <div class="medium-6 cell">
+            <label>Resumen Curricular:
+            <input type="text" placeholder=".medium-6.cell" value= "{{ persona.cv }}">    
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Fecha de Ingreso:
+               <input type="text" placeholder=".medium-6.cell" value= "{{ persona.fec_nac }}"> 
+            </label>
+        </div>
+         <div class="medium-6 cell">
+            <label>Salairo:
+                <input type="text" placeholder=".medium-6.cell" value= "{{ persona.salario }}"> 
+            </label>
+        </div>
+        
+
+       
+
+        
+        <div class="medium-6 cell">
+          
+             <input class="alert button" type="submit" value="Regresar">
+        </div>
+       
+    </form>
+    </div>
+</div>
+{% endblock content %}

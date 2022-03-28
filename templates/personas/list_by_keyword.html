@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %} Sistema Empleado | Inicio {% endblock title %}
+{% block content %}
+{% include 'includes/header.html' %}
+
+
+<div class= "grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Lista de Empleados por Area</h1>
+
+<form method="GET">{% csrf_token %}
+        <div class="cell grid-x grid-margin-x">
+            <div class="cell large-7">
+               <input type="text" id="kword" name="kword" placeholder="Ingrese el Area">            
+            </div>
+            
+            <div class="cell large-2">
+                <button type="submit" class="button">Buscar</button>
+            </div>
+       </div>
+
+       <ul>
+        {% for persona in personas %}
+            <li>{{ persona.departamento}} - {{ persona.name }}</li>
+        {% empty %}
+            <li>No personas yet.</li>
+        {% endfor %}
+        </ul>
+        
+        </div>
+    
+
+</form>
+
+
+
+{% endblock content %}
