@@ -2,7 +2,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
@@ -11,7 +11,7 @@ DATABASES = {
         'NAME': 'Empleados',
         'USER': 'soyraul',
         'PASSWORD': 'soyraul',
-        'HOST': 'localhost',
+        'HOST': '147.182.130.164',
         'PORT': '5432',
 
     }
