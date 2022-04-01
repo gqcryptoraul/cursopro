@@ -43,7 +43,7 @@ class Personas(models.Model):
     correo = models.EmailField('Correo',blank=True)
     job = models.CharField('Cargos', max_length=1, choices=JOB_CHOICES)
     salario = models.DecimalField('salario', max_digits=10, decimal_places=2)
-    habilidades = models.ManyToManyField(Habilidades,blank=True, null=True)
+    habilidades = models.ManyToManyField(Habilidades,blank=True)
     cv = RichTextField()
     avatar = models.ImageField(upload_to='personas', null=True, blank=True)
 
