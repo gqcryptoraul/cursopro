@@ -6,7 +6,7 @@ django-ckeditor==6.2.0
 django-editor==0.1
 django-js-asset==2.0.0
 Pillow==9.0.1
-psycopg2==2.9.3
+psycopg2-binary
 pycodestyle==2.8.0
 sqlparse==0.4.2
 toml==0.10.2
